@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+    <class name="ru.Model.GraphicsCard" table="graphicscard">
+        <id name="id" column="id" type="integer">
+            <generator class="identity"/>
+        </id>
+        <property name="model" column="model" />
+        <many-to-one name="brandName" column="brandname" class="ru.Model.Brand"
+            cascade="save-update"/>
+    </class>
+</hibernate-mapping>
